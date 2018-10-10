@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>自动完成部件（Autocomplete Widget）演示</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<body>
+<label for="autocomplete">选择一个编程语言：</label>
+<input id="autocomplete">
+<button onclick="setHistory()">确定</button>
+</body>
+<script>
+    $( "#autocomplete" ).autocomplete({
+        source: $.cookie('localHistory') ? $.cookie('localHistory').split(',') : []
+    });
+    function setHistory() {
+        var content = $('#autocomplete').val();
+        var historyArray = $.cookie('localHistory') ? $.cookie('localHistory').split(',') : [];
+        historyArray.push(content);
+        $.unique(historyArray);
+        var historyString = historyArray.join(",");
+        $.cookie('localHistory',historyString);
+        location.reload();
+    }
+</script>
+</html>
