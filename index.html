@@ -7,6 +7,17 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
+    <style>
+        .ui-autocomplete {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: default;
+            overflow-y:scroll;
+            overflow-x:hidden;
+            max-height: 200px;
+        }
+    </style>
 </head>
 <body>
 <label for="autocomplete">选择一个编程语言：</label>
@@ -15,7 +26,10 @@
 </body>
 <script>
     $( "#autocomplete" ).autocomplete({
+        minLength: 0,
         source: $.cookie('localHistory') ? $.cookie('localHistory').split(',') : []
+    }).focus(function () {
+        $(this).autocomplete("search");
     });
     function setHistory() {
         var content = $('#autocomplete').val();

@@ -21,3 +21,12 @@ https://www.jb51.net/article/118657.htm
 jQuery数组去重复
 https://www.cnblogs.com/soundcode/p/6192610.html
 https://www.jb51.net/article/127245.htm
+
+JQuery autocomplete获得焦点触发弹出下拉框
+https://www.cnblogs.com/xuwendong/p/6489437.html
+https://blog.csdn.net/qq_42310995/article/details/80915155
+
+jQuery UI Autocomplete控件下拉列表固定高度
+https://blog.csdn.net/TeamMicLee/article/details/70053730
+https://blog.csdn.net/qq_42310995/article/details/80915155
+https://blog.csdn.net/u010319440/article/details/44860673
