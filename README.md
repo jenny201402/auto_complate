@@ -30,3 +30,6 @@ jQuery UI Autocomplete控件下拉列表固定高度
 https://blog.csdn.net/TeamMicLee/article/details/70053730
 https://blog.csdn.net/qq_42310995/article/details/80915155
 https://blog.csdn.net/u010319440/article/details/44860673
+
+Limit results in jQuery UI Autocomplete
+https://stackoverflow.com/questions/7617373/limit-results-in-jquery-ui-autocomplete/7617637

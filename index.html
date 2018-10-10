@@ -26,12 +26,13 @@
 <button onclick="delHistory()">清除历史记录</button>
 </body>
 <script>
-    $( "#autocomplete" ).autocomplete({
-        max: 12,
-        // highlight: true,
-        // multiple: true,
+    $("#autocomplete").autocomplete({
         minLength: 0,
-        source: $.cookie('localHistory') ? $.cookie('localHistory').split(',') : []
+        // source: $.cookie('localHistory') ? $.cookie('localHistory').split(',') : []
+        source: function(request, response) {
+            var results = $.ui.autocomplete.filter($.cookie('localHistory') ? $.cookie('localHistory').split(',') : [], request.term);
+            response(results.slice(0, 7));
+        }
     }).focus(function () {
         $(this).autocomplete("search");
     });
